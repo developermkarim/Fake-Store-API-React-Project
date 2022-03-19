@@ -1,0 +1,15 @@
+.gidstyle{
+display: flex;
+}
+
+  .rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1em;
+    color: yellow;
+    font-size: 16px;
+  }
+  .everyCart{
+display: flex;
+justify-content: center;
+  }

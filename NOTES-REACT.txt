@@ -1,0 +1,187 @@
+//React learning path;
+
+Four types of components in React;
+1. Similar in look but different in data.
+2. Container components where one or more similar components are contained in border catagory.
+3. keeping components in beakdown system for sakeness of work in website.
+ Example : left site or right side of a page.best example in www.thejsdude.com(right side) and left side in www.youtube.com in desktop.
+4. alone components not like the above components e.g. footer section or header section is stand alone component.
+
+different Between SIngle Page application(SPA) vs Multi Page application(MPA)
+
+1.SPA --Quick Loading time but MPA - slow Loading time.
+2. Uses Less Bandwidth but MPA-  more Bandwidth.
+3.SPA has Seamless/ good User Experience but MPA - less good User Experience.
+4. SPA is something securtiy essue  but MPA - has securtiy strong.
+5. SPA Doesn't Perform well with SEO but MPA - Performs well with search Engine Optimization.
+
+// Single Page application has a ROUNTING option .Depending on Routing , We can see the option of Page.
+it enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.
+
+// Attributes vs properties.
+actually The Attributes used in html are named properties in using for javscript.suppose dom properties but html Attributes title, id, href.
+
+// properties calls as PROPS in React.
+
+// user can change STATE in web app(React state). if user interact in app , state can be changed.if totally depends on user. If He doesn't change state, Suppose visiting in app ,he doesn't apply any react like in facebook.add to card in ecommerce is a state changing example.to Wrap up, Web Application data that could be changed.
+
+// 6 Core Concepts of ReactJS to UnderStant Easily
+
+1.JSX == Javacript objects.It is system for writing html.its Babble takes html codes and convert it to javscript.
+we can use style in 3 ways internal , external and inline in JSX.(app.js). JSX(Javacript Xml)
+
+// JSX----
+
+// 2. useState() // used for creating new state in website like increasing product count or add to product.It has [] empty array with 2 elements . one is counter value and the other is function for the counter. So we can destructering 
+
+this array const [count, SetCount] = useState()
+
+and afftecting for this state useEffect(arrow function , array[]) with these two parts
+
+///
+
+const ExternalUsers = ()=>{
+
+  const [users, setUsers] = useState([]) 
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(resData => setUsers(resData))
+  }, 
+  
+  []);
+
+///
+
+/// 3. components
+/// 4. Props.(Attributes for HTML but properties for React)
+/// 5. Dynamic creating function <functionNme></functionNme>
+/// 6. Events
+
+ return result with (
+
+)
+
+ import logo from './logo.svg';
+import './App.css';
+
+const myInfo = {name:'Mahmodul Karim', age: 27, graduate: 'Masters'}
+const {name, age, graduate} = myInfo;
+const myPhoneNumber = '0164721332';
+const myWorking = 'Learning Programming';
+const myaddress = 'Lalbag Thana, Dhaka South Area, code-1381';
+
+const myWorkingStyle ={
+  color:'violet',
+  backgroundColor:'#61dafb',
+  padding:'20px',
+  margin : '10px'
+}
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+
+    <h1>JSX</h1>
+    <p className='welcomeMsg'>Hellow Dude , React , How R You</p>
+    <h3>Name : {name}</h3> <span>{graduate}</span>
+   <p style={{color:'black', backgroundColor:'yellow'}}>My Contact Number : {`+88-${myPhoneNumber}`}</p>
+   <p>My Learning Way : {myWorking}</p>
+   <address>My Location : {mydress}</address>
+
+
+        <p style={myWorkingStyle}>
+          Edit the source <code>src/App.js</code> and save to reload.
+        </p>
+        
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+
+---- creating new Folder name component in src folder.Then js , css and other working files including here.
+(Code Runner
+)
+(
+  Code Spell Checker
+
+
+)
+two important extension of VS code.
+
+// React extension pack for shortcut snippet , such as rsc mean full function with name and export.
+
+
+// creating a React component like from API
+Methods Here : 1. useState([]) ,
+
+ 2. useEffect( () =>{}, [])
+
+ 3. Fething data in the useEffect arrow function.
+
+4. working with map or others in return(
+  <div> 
+  </div>
+  and calling here the fucntion that used to show data
+)
+
+5. Makeanother function to show data easily and clearly with giving properties that used in main function html tag Attributes inside(e.g. name) these < name= {}> </>.
+
+// Properties(html tag in js) can be taken in a variable to use direct function . no need to use propeties one by one in calling function <></> in this ways. 
+
+example 
+
+ {
+               EachCountry.slice(0,20).map(EachCountryData  => <Country // best way this to use all props.
+                country_data = {EachCountryData}
+               
+                //  CountryName = {EachCountryData.name.common} |
+                //  Population = {EachCountryData.population}    | all these previous sytem to use properties
+                //   Area = {EachCountryData.area}
+
+               ></Country>)
+               
+           }
+
+           more useful system .
+           example by using directly destructering 
+
+
+Example Here :
+
+const Country = (props) => {
+    const {name:{common},area, population} = props.country_data;
+    return (
+        <div>
+            <h4 className='countryStyle'>Country name : {common}</h4>
+            <h5>Population : {population}</h5>
+            <h6>AREA : {area}</h6>
+        </div>
+    );
+};
+           
+           and finally the best way to use and call the propeties
+
+// React app to deploy in netlify -- npm run build writing in VS Code terminal or cmd.then After every updates , npm run build is mandatory to write in terminal.it will build in same project folder in my app.
+
+// To use Bootstrap in React , run in terminal "npm install react-bootstrap bootstrap@5.1.3" . to get latest version go to "https://react-bootstrap.github.io/getting-started/introduction/"
+
+// properits can be sent One folder js file to another folder by calling props that is Attributes in another folder.
+
+Example ===  App.js --- Menubar.js(child of src) --- Test.js(child of src) 
+app.js ---   <Menubar inCreament={counter} Decrement={decreCounter}
+
+></Menubar> (import Menubar from './Components/Menubar/Menubar';)
+
+Menubar.js ---  <Test Increasing={inCreament}  decreasing = 
+
+{Decrement}></Test> (import Test from '../Tests/Test';)
+
+Test.js ---<button className='ms-3 p-3' onClick={Increasing}>+</button>
+
+    <button className='ms-3 p-3' onClick={decreasing}>-</button>

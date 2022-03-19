@@ -1,0 +1,14 @@
+.ulstyle li{
+    font-weight:large;
+    font-size: 20px;
+    cursor:pointer
+
+
+}
+.ulstyle{
+    display: flex;
+    justify-content:space-around;
+}
+.logostyle{
+    display:inline-block;
+}
