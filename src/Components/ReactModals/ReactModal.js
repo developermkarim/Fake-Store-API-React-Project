@@ -17,7 +17,7 @@ const ReactModals = (props) => {
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-          <img  src={props.modalimg} alt="Modal Image" className='card-img-top w-50 mx-4' width={250} height={250}/>
+          <img  src={props.modalimg} alt="Modal_image" className='card-img-top w-50 mx-4' width={250} height={250}/>
             <Modal.Title>{props.ModalTitle} <br /> {props.modalPrice}</Modal.Title>
           </Modal.Header>
           <Modal.Body>{props.detailsShow}</Modal.Body>
